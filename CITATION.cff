@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+authors:
+- family-names: "Anchukaitis"
+  given-names: "Kevin"
+  orcid: "https://orcid.org/0000-0002-8509-8080"
+title: "Singular Spectrum Analysis"
+version: 1.0.0
+doi: 10.5281/zenodo.13730737.
+date-released: 2024-09-07
+url: "https://github.com/kanchukaitis/ssa"
