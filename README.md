@@ -1,4 +1,6 @@
 # ssa
+[![DOI](https://zenodo.org/badge/853899626.svg)](https://zenodo.org/doi/10.5281/zenodo.13730737)
+
 This repository contains MATLAB code for Singular Spectrum Analysis based on Allen and Smith (1996) and Ghil et al. (2002)
 
 Allen M., Smith L.A., 1996: Monte Carlo SSA: Detecting irregular oscillations in the presence of coloured noise,  J. Clim.,  9 , 3373-3404. 
