@@ -67,13 +67,9 @@ xc = x - Xbar;
 % Now get simple first order autocorrelation and variance for Monte Carlo tests
 foac = corrcoef(xc(1,1:end-1),xc(1,2:end)); foac = foac(1,2);
 
-foac = 0.67858
-
 disp(['First Order Autocorrelation calculated: ', num2str(foac)])
 datavar = var(xc);
 disp(['Variance of original datset calculated: ', num2str(datavar)])
-
-% pause
 
 % Prepare the trajectory matrix D
 if M > N; error(['Window length greater than series length! M should be less than N']); return; end;
@@ -160,13 +156,6 @@ end
 G = G - repmat(mean(G),m,1);
 G = G/std(G);
 
-% G = standardize(G)
-
-% for j=1:N
-%   G(1,j) = G(1,j) .* sqrt(datavar);
-% end
-
-
 for j=1:M
   Dr(j,:)=G(:,j:N-M+j); 
 end
@@ -185,8 +174,6 @@ if fspec==1
         noisePeriods(:,i) = Noiseper;
         clear Noiseper
 end
-
-
 
  lambda_red(i,:) = diag(U'*Cr*U)';
  lambda_red_norm(i,:) = diag(U'*Cr*U)'/trace(U'*Cr*U)';
@@ -220,14 +207,7 @@ end
 
 %% Calculate the primary periodicity of the Reconstructed Components (eigenvectors)
 warning off;
-% if fspec==1
-%     for gg=1:20
-%         [G,~,f] = quickmtm(evec(:,gg),3,0,0,1);
-%         Dper(gg,1) = 1/f((G==max(G)));
-%         disp(['TEOF (SSA) ',num2str(gg), ': Variance = ', num2str(varexp(gg)*100), ' Period = ', num2str(Dper(gg,1))])
-%         clear G
-%     end
-% end
+
 if fspec==1
     for gg=1:20
         [G,~,f] = quickmtm(RC(gg,:),3,0,0,1);
